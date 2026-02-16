@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int baseCost=scan.nextInt();
+	    int extraGB=scan.nextInt();
+	    int ratePerGB=scan.nextInt();
+	    int tax=scan.nextInt();
+	    float cost=extraGB*ratePerGB;
+	    float total=baseCost+cost;
+	    float amount=total*tax/100;
+	    float result=total+amount;
+	    System.out.println(result);
+	    
+	    
+		}
+}
