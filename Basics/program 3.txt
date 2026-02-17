@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int sales= scan.nextInt();
+        int discount = scan.nextInt();
+        int gst = scan.nextInt();
+        int amount=sales*discount/100;
+        int price=sales-amount;
+        int gst_amount=price*gst/100;
+        int result=price+gst_amount;
+        System.out.println(result);
+    }
+}
