@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int perarce=scan.nextInt();
+	    int arces=scan.nextInt();
+	    int extrayield=scan.nextInt();
+	    int damaged=scan.nextInt();
+	    int result=perarce*arces+extrayield-damaged;
+	    System.out.println(result);
+	    }
+}
