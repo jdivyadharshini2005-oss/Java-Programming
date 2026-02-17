@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int delivery=scan.nextInt();
+	    int payout=scan.nextInt();
+	    int incentive=scan.nextInt();
+	    int fuelcost=scan.nextInt();
+	    int result=delivery*payout+incentive-fuelcost;
+	    System.out.println(result);
+	    }
+}
