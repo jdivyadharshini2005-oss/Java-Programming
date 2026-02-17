@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int daysworked=scan.nextInt();
+	    int wageperday=scan.nextInt();
+	    int overtimebonous=scan.nextInt();
+	    int maintenance=scan.nextInt();
+	    int a=daysworked*wageperday+overtimebonous-maintenance;
+	    System.out.println(a);
+	    }
+}
