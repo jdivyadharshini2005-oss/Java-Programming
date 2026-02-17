@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int distance=scan.nextInt();
+	    int mileage=scan.nextInt();
+	    int fuelprice=scan.nextInt();
+	    int tollcharge=scan.nextInt();
+	    int a=distance/mileage*fuelprice+tollcharge;
+	    System.out.println(a);
+	    }
+}
