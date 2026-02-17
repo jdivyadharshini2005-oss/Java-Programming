@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int base=scan.nextInt();
+	    int session=scan.nextInt();
+	    int pay=scan.nextInt();
+	    int bonus=scan.nextInt();
+	    int maintenance=scan.nextInt();
+	    int salary=base+session*pay+bonus-maintenance;
+	    System.out.println(salary);
+	    }
+}
