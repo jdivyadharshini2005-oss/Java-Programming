@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int copy=scan.nextInt();
+	    int cost=scan.nextInt();
+	    int edit=scan.nextInt();
+	    int design=scan.nextInt();
+	    int comission=scan.nextInt();
+	    int market=scan.nextInt();
+	    int book_publish=copy*cost+edit+design-comission-market;
+	    System.out.println(book_publish);
+	    }
+}
