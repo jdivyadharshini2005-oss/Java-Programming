@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int roomcharge=scan.nextInt();
+	    int days=scan.nextInt();
+	    int medicine=scan.nextInt();
+	    int lab=scan.nextInt();
+	    int insurance=scan.nextInt();
+	    int result=roomcharge*days+medicine+lab-insurance;
+	    System.out.println(result);
+	    }
+}
