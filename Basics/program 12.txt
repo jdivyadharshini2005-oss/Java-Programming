@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int ticket=scan.nextInt();
+	    int snacks=scan.nextInt();
+	    int maintenance=scan.nextInt();
+	    int electricity=scan.nextInt();
+	    int result=ticket+snacks-maintenance-electricity;
+	    System.out.println(result);
+	    }
+}
