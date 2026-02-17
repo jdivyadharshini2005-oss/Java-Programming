@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int register=scan.nextInt();
+	    int broadcast=scan.nextInt();
+	    int sponsor=scan.nextInt();
+	    int price=scan.nextInt();
+	    int rent=scan.nextInt();
+	    int advertising=scan.nextInt();
+	    int sports=register+broadcast+sponsor-price-rent-advertising;
+	    System.out.println(sports);
+	    }
+}
