@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int perhour=scan.nextInt();
+	    int hourworked=scan.nextInt();
+	    int overtime=scan.nextInt();
+	    int rejected=scan.nextInt();
+	    int a=perhour*hourworked+overtime-rejected;
+	    System.out.println(a);
+	    }
+}
