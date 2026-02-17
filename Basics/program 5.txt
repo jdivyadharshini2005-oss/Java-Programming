@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+	public static void main (String[] args) 
+	{
+	    Scanner scan = new Scanner(System.in);
+	    int totalbill=scan.nextInt();
+	    int service=scan.nextInt();
+	    int gst=scan.nextInt();
+	    int numberOfPeople=scan.nextInt();
+	    int a=totalbill*service/100;
+	    int b=totalbill*gst/100;
+	    int c=a+b+totalbill;
+	    int total=c/numberOfPeople;
+	    System.out.println(total);
+	    }
+}
