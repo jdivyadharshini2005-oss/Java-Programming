@@ -1,0 +1,17 @@
+ // government scholarship eligibility
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int income=scan.nextInt();
+        int percentage=scan.nextInt();
+        if(income<200000 && percentage>=75){
+            System.out.println("Scholarship granted");
+        }
+        else{
+            System.out.println("Not Granted");
+        }
+    }
+}
+
+
