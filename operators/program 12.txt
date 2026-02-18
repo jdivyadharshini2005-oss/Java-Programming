@@ -1,0 +1,11 @@
+    //Data compression size reduction
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int size = scan.nextInt();
+        int compression = scan.nextInt();
+        int file = size >> compression;
+        System.out.println(file);
+    }
+}
