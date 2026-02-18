@@ -1,0 +1,16 @@
+  // movie threatre age access control
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int age = scan.nextInt();
+        int id = scan.nextInt();
+        if(age>=18 && id==1){
+            System.out.println("Entry allowed");
+        }
+        else{
+            System.out.println("Entry denied");
+        }
+        
+    }
+}
