@@ -1,0 +1,18 @@
+ // credit card purchase
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int credit=scan.nextInt();
+        int purchase=scan.nextInt();
+        int card=scan.nextInt();
+        if(purchase<=credit && card==0){
+            System.out.println("approved");
+        }
+        else{
+            System.out.println("declined");
+        }
+    }
+}
+
+
