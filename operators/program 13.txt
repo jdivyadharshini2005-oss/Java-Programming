@@ -1,0 +1,16 @@
+                 //smart electricity bitmask monitoring
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan= new Scanner(System.in);
+        int connection = scan.nextInt();
+        int appliance = scan.nextInt();
+        if((connection & appliance)>0){
+            System.out.println("Active");
+        }
+        else{
+            System.out.println("Inactive");
+        }
+    }
+}
+
