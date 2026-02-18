@@ -1,0 +1,19 @@
+// online exam pass evaluation
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int theory= scan.nextInt();
+        int pratical= scan.nextInt();
+        int average=(theory+pratical)/2;
+        if(theory>=50 && pratical>=50 && average>=60){
+            System.out.println("pass");
+        }
+        else{
+            System.out.println("fail");
+        }
+        
+    }
+}
+
