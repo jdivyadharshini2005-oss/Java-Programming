@@ -1,0 +1,19 @@
+// ATM withdrawal eligibility
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int balance=scan.nextInt();
+        int withdrawal=scan.nextInt();
+        int dailylimit=scan.nextInt();
+        if(withdrawal<=balance && withdrawal<=dailylimit){
+            System.out.println("transaction approved");
+        }
+        else{
+            System.out.println("transaction declined");
+        }
+        
+    }
+    
+}
+
