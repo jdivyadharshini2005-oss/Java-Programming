@@ -1,0 +1,15 @@
+    //digital signal toggle controller
+        
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan =new Scanner(System.in);
+        int signal=scan.nextInt();
+        int toggle=scan.nextInt();
+        int digital=signal^toggle;
+        System.out.println(digital);
+        
+    }
+}
+
+
