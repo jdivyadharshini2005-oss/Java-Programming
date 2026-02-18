@@ -1,0 +1,17 @@
+ // Bank loan approval eligibility
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int salary=scan.nextInt();
+        int credit=scan.nextInt();
+        if(salary>25000 && credit>700){
+            System.out.println("Loan approved");
+        }
+        else{
+            System.out.println("Loan declined");
+        }
+    }
+}
+
+
