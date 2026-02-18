@@ -1,0 +1,16 @@
+ // E-commerce free shipping eligibility
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int cart = scan.nextInt();
+        int premium=scan.nextInt();
+        if(cart>999 || premium==1){
+            System.out.println("Free shipping");
+        }
+        else{
+            System.out.println("Charges applied");
+        }
+    }
+}
+
