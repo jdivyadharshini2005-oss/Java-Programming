@@ -1,0 +1,50 @@
+           //Employee Performance Bonus Calculator
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner scan=new Scanner(System.in);
+        int rating = scan.nextInt();
+        int year = scan.nextInt();
+        char department = scan.next().charAt(0);
+        float salary = scan.nextFloat();
+        float percentage = 0;
+        if(rating>=3){
+            if(department == 'C' || department =='c'){
+                if(rating==5 && year>=5){
+                    percentage=25;
+                }
+                else if(rating==4 && year>=10){
+                    percentage=22;
+                }
+                else if(rating==4){
+                    percentage=15;
+                }
+                else if(rating==3){
+                    percentage=10;
+                }
+                
+            }
+            else{
+                if(rating==5){
+                    percentage=18;
+                }
+                else if(rating==4){
+                    percentage=12;
+                }
+                else if(rating==3){
+                    percentage=8;
+                }
+            }
+            float bonus = salary * (percentage / 100);
+            String status= (rating >= 3) ? "Eligible" : "Not Eligible";
+            System.out.println("Performance Rating : " + rating);
+            System.out.println("Years of Service : " + year);
+            System.out.println("Department : " + department);
+            System.out.println("Bonus percentage : " + percentage + "%");
+            System.out.println("Bonus Amount : " + "$" + bonus);
+            System.out.println("Status : " + status);
+            
+            
+        }
+    }
+}
