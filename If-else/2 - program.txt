@@ -1,0 +1,70 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int creditScore = sc.nextInt();
+        double annualIncome = sc.nextDouble();
+        double debtRatio = sc.nextDouble();
+        sc.nextLine();
+        String loanType = sc.nextLine();
+        String decision = "Rejected";
+        double maxLoanAmount = 0;
+        String creditTier;
+        String debtTier;
+        if (creditScore < 600 || debtRatio > 50) {
+            decision = "Rejected";
+        } else {
+
+            if (creditScore >= 750)
+                creditTier = "Excellent";
+            else if (creditScore >= 700)
+                creditTier = "Good";
+            else if (creditScore >= 650)
+                creditTier = "Fair";
+            else
+                creditTier = "Poor";
+            if (debtRatio <= 30)
+                debtTier = "Low";
+            else if (debtRatio <= 40)
+                debtTier = "Moderate";
+            else
+                debtTier = "High";
+            if (loanType.equalsIgnoreCase("Home")) {
+                if (creditTier.equals("Excellent") && debtTier.equals("Low")) {
+                    decision = "Approved";
+                    maxLoanAmount = annualIncome * 4;
+                }
+                else if ((creditTier.equals("Good") || creditTier.equals("Fair"))
+                        && debtTier.equals("Moderate")) {
+                            decision = "Needs Review";
+                            maxLoanAmount = annualIncome * 3;
+                }
+            }
+            else if (loanType.equalsIgnoreCase("Personal")) {
+                if (creditTier.equals("Excellent") && debtTier.equals("Low")) {
+                    decision = "Approved";
+                    maxLoanAmount = annualIncome;
+                }
+                else if (creditTier.equals("Fair") && debtTier.equals("Moderate")) {
+                    decision = "Needs Review";
+                    maxLoanAmount = annualIncome * 0.5;
+                }
+            }
+            else if (loanType.equalsIgnoreCase("Business")) {
+
+                if ((creditTier.equals("Excellent") || creditTier.equals("Good"))
+                        && (debtTier.equals("Low") || debtTier.equals("Moderate"))) {
+
+                    decision = "Approved";
+                    maxLoanAmount = annualIncome * 3;
+                }
+            }
+        }
+        System.out.println("Credit Score: " + creditScore);
+        System.out.println("Annual Income: $" + annualIncome);
+        System.out.println("Debt-to-Income Ratio: " + debtRatio + "%");
+        System.out.println("Loan Type: " + loanType);
+        System.out.println("Decision: " + decision);
+        System.out.println("Maximum Loan Amount: $" + maxLoanAmount);
+    }
+}
