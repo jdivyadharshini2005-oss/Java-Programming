@@ -1,4 +1,4 @@
-package loop;
+
 import java.util.*;
 public class while2 {
     public static void main(String[]args){
@@ -20,4 +20,3 @@ public class while2 {
     }
     
 }
-
