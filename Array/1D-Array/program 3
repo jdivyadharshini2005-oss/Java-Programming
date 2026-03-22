@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int marks[] = new int[n];
+        for(int i = 0; i < n; i++){
+            marks[i] = sc.nextInt();
+        }
+        int max = marks[0];
+        int min = marks[0];
+        int fail = 0;
+        for(int i = 0; i < n; i++){
+            if(marks[i] > max){
+                max = marks[i];
+            }
+            if(marks[i] < min){
+                min = marks[i];
+            }
+            if(marks[i] < 40){
+                fail++;
+            }
+        }
+        double passPercent = ((n - fail) * 100.0) / n;
+        System.out.println("Total Students: " + n);
+        System.out.println("Highest Score: " + max);
+        System.out.println("Lowest Score: " + min);
+        System.out.println("Failed Students: " + fail);
+        System.out.printf("Pass Percentage: %.2f%%", passPercent);
+    }
+}
