@@ -1,4 +1,4 @@
-package loop;
+
 import java.util.*;
 public class while8 {
     public static void main(String[]args){
