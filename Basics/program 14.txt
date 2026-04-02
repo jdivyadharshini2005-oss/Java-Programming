@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main{
 	public static void main (String[] args) 
 	{
-	    Scanner scan = new Scanner(System.in);
+	    Scanner scan = new.        Scanner(System.in);
 	    int base=scan.nextInt();
 	    int session=scan.nextInt();
 	    int pay=scan.nextInt();
