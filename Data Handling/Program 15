@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int months = num*12;
+        int days = num*365;
+        int hours = num*365*24;
+        int seconds = num*365*24*3600;
+        System.out.printf("Ages in Months: %d\n",months);
+        System.out.printf("Ages in Days: %d\n", days);
+        System.out.printf("Ages in Hours: %d\n",hours);
+        System.out.printf("Ages in Seconds: %d",seconds);
+        
+    }
+}
