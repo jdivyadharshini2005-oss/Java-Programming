@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        float num = sc.nextFloat();
+        float yards = num*1760;
+        float feet = num*5280;
+        float inches = num*63360;
+        System.out.printf("Yards: %.1f\n",yards);
+        System.out.printf("Feet: %.1f\n",feet);
+        System.out.printf("Inches: %.1f",inches);
+        
+    }
+}
