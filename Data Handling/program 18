@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner scan=new Scanner(System.in);
+        float D=scan.nextFloat();
+        float k=D*1.60934f;
+        float m=k*1000f;
+        float c=m*100f;
+        System.out.printf("Kilometers: %.5f\n",k);
+        System.out.printf("Meters: %.2f\n" ,m);
+        System.out.printf("Centimeters: %.1f",c);
+        
+    }
+}
