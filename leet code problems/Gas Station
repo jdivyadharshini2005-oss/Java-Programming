@@ -1,0 +1,15 @@
+class Solution {
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int total = 0,car_tank =0,start =0;
+        for(int index=0;index<gas.length;index++){
+            total += gas[index]-cost[index];
+            car_tank += gas[index]-cost[index];
+            if(car_tank<0){
+                car_tank=0;
+                start = index+1;
+            }
+        }
+        return total>=0?start:-1;
+        
+    }
+}
