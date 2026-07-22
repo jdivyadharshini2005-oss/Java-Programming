@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        String id = sc.nextLine();
+        int hours = sc.nextInt();
+        int a = sc.nextInt();
+        float result = hours*a;
+        System.out.printf("Employee's ID = %s\n",id);
+        System.out.printf("Salary = Rs. %.2f",result);
+        
+    }
+}
