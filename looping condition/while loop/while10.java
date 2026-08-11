@@ -1,4 +1,4 @@
-package loop;
+int loop;
 import java.util.*;
 public class while10 {
     public static void main(String[] args) {
