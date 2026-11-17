@@ -1,0 +1,158 @@
+import java.util.*;
+
+class Solution {
+    int[] tin, tout, depth, parent;
+    int[][] up;
+    int[] bit;
+    int timer, LOG, n;
+
+    void update(int index, int value) {
+        index++;
+        while (index < bit.length) {
+            bit[index] ^= value;
+            index += index & -index;
+        }
+    }
+
+    int query(int index) {
+        int result = 0;
+        while (index > 0) {
+            result ^= bit[index];
+            index -= index & -index;
+        }
+        return result;
+    }
+
+    boolean isAncestor(int u, int v) {
+        return tin[u] <= tin[v] && tout[v] <= tout[u];
+    }
+
+    int lca(int u, int v) {
+        if (isAncestor(u, v)) return u;
+        if (isAncestor(v, u)) return v;
+
+        for (int j = LOG - 1; j >= 0; j--) {
+            if (!isAncestor(up[j][u], v)) {
+                u = up[j][u];
+            }
+        }
+        return parent[u];
+    }
+
+    public List<Boolean> palindromePath(int n, int[][] edges, String s, String[] queries) {
+        this.n = n;
+
+        List<Integer>[] graph = new ArrayList[n];
+        for (int i = 0; i < n; i++) {
+            graph[i] = new ArrayList<>();
+        }
+
+        for (int[] edge : edges) {
+            graph[edge[0]].add(edge[1]);
+            graph[edge[1]].add(edge[0]);
+        }
+
+        tin = new int[n];
+        tout = new int[n];
+        depth = new int[n];
+        parent = new int[n];
+
+        LOG = 1;
+        while ((1 << LOG) <= n) {
+            LOG++;
+        }
+
+        up = new int[LOG][n];
+
+        int[] stackNode = new int[2 * n + 5];
+        int[] stackParent = new int[2 * n + 5];
+        int[] stackState = new int[2 * n + 5];
+        int top = 0;
+
+        stackNode[top] = 0;
+        stackParent[top] = 0;
+        stackState[top++] = 0;
+
+        timer = 0;
+
+        while (top > 0) {
+            top--;
+
+            int u = stackNode[top];
+            int p = stackParent[top];
+            int state = stackState[top];
+
+            if (state == 0) {
+                parent[u] = p;
+                tin[u] = timer++;
+
+                stackNode[top] = u;
+                stackParent[top] = p;
+                stackState[top++] = 1;
+
+                for (int v : graph[u]) {
+                    if (v == p) continue;
+
+                    depth[v] = depth[u] + 1;
+
+                    stackNode[top] = v;
+                    stackParent[top] = u;
+                    stackState[top++] = 0;
+                }
+            } else {
+                tout[u] = timer++;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            up[0][i] = parent[i];
+        }
+
+        for (int j = 1; j < LOG; j++) {
+            for (int i = 0; i < n; i++) {
+                up[j][i] = up[j - 1][up[j - 1][i]];
+            }
+        }
+
+        bit = new int[2 * n + 2];
+        int[] charMask = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            charMask[i] = 1 << (s.charAt(i) - 'a');
+            update(tin[i], charMask[i]);
+            update(tout[i], charMask[i]);
+        }
+
+        List<Boolean> answer = new ArrayList<>();
+
+        for (String q : queries) {
+            String[] parts = q.split(" ");
+
+            int u = Integer.parseInt(parts[1]);
+
+            if (parts[0].equals("update")) {
+                int newMask = 1 << (parts[2].charAt(0) - 'a');
+
+                if (charMask[u] != newMask) {
+                    int change = charMask[u] ^ newMask;
+
+                    update(tin[u], change);
+                    update(tout[u], change);
+
+                    charMask[u] = newMask;
+                }
+            } else {
+                int v = Integer.parseInt(parts[2]);
+                int w = lca(u, v);
+
+                int mask = query(tin[u] + 1)
+                         ^ query(tin[v] + 1)
+                         ^ charMask[w];
+
+                answer.add((mask & (mask - 1)) == 0);
+            }
+        }
+
+        return answer;
+    }
+}
